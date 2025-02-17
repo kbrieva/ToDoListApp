@@ -20,7 +20,7 @@ export const AddToDoList = () => {
     }
 
     const onEnter = (e) => {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' && addTask.trim() !== '') {
             handleAddToList()
         }
     }
@@ -43,7 +43,7 @@ export const AddToDoList = () => {
     return (
         <div className="todolist">
             <div><input type="text" placeholder="Add To Do List" onChange={handleAddTask} onKeyDown={onEnter} value={addTask}/>
-            <AddButton onClick={handleAddToList}/></div>
+            <AddButton onClick={handleAddToList} disabled={addTask.trim() === ''}/></div>
             <div className='inputTodoList'>
                 {toDoList.map((task) => (
                     <div key={task.id}>

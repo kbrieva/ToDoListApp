@@ -2,7 +2,7 @@ import "./todolist.css"
 
 
 export const AddButton = (props) => {
-    return <button className="addbutton" onClick={props.onClick}>Add</button>
+    return <button className="addbutton" onClick={props.onClick} disabled={props.disabled}>Add</button>
 }
 
 export const DeleteButton = (props) => {
